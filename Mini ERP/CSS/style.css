@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: #1f2937;
+    color: white;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 40px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+/* TOPO FIXO */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1f2937;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.main-menu a {
+    margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+}
+
+.main-menu a:hover,
+.main-menu a.active {
+    opacity: 1;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: #f1f5f9;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar a:hover {
+    font-weight: bold;
+}
+
+/* CONTEÚDO */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* FILTROS */
+.filters {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.filters input,
+.filters select {
+    padding: 8px;
+}
+
+/* TABELA */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.table th {
+    background: #f1f5f9;
+}
+
+/* STATUS */
+.status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status.aberto {
+    background: #fde68a;
+}
+
+.status.aguardando {
+    background: #bfdbfe;
+}
+
+.status.pago {
+    background: #bbf7d0;
+}
+
+/* BOTÕES */
+.btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn.warning {
+    background: #f97316;
+    color: white;
+}
+
+/* CABEÇALHO DO PEDIDO */
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* CAIXAS DE INFORMAÇÃO */
+.card-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* TOTAL */
+.pedido-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* AÇÕES */
+.acoes {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.modal-content textarea {
+    resize: none;
+    height: 60px;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.modal-content textarea {
+    resize: none;
+    height: 60px;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* MESMO ESTILO DE MODAL DO CAIXA */
+#modalCredito .modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+}
+
+#modalCredito label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#modalCredito input,
+#modalCredito select,
+#modalCredito textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+#modalCredito textarea {
+    resize: none;
+    height: 60px;
+}
+
+#modalCredito .modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

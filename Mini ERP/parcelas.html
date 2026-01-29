@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Parcelas do Cliente</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo">🏢 Gestão</div>
+    <nav class="main-menu">
+        <a href="index.html">🏠</a>
+        <a href="cadastro.html">👤</a>
+        <a href="estoque.html">📦</a>
+        <a href="pedidos.html">🧾</a>
+        <a href="relatorios.html">📑</a>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h3>Financeiro</h3>
+        <a href="parcelas.html" class="active">💳 Parcelas</a>
+        <a href="#">📄 Extrato</a>
+        <a href="#">⚠ Inadimplência</a>
+    </aside>
+
+    <main class="content">
+
+        <h2>Parcelas do Cliente</h2>
+
+        <!-- CLIENTE -->
+        <div class="card-box">
+            <h3>Cliente</h3>
+            <p><strong>Nome:</strong> João Silva</p>
+            <p><strong>CPF:</strong> 123.456.789-00</p>
+            <p><strong>Limite Total:</strong> R$ 500,00</p>
+            <p><strong>Limite Usado:</strong> R$ 250,00</p>
+            <p><strong>Limite Disponível:</strong> R$ 250,00</p>
+        </div>
+
+        <!-- RESUMO -->
+        <div class="card-box">
+            <h3>Resumo Financeiro</h3>
+            <p><strong>Total em Parcelas:</strong> R$ 250,00</p>
+            <p><strong>Parcelas Pagas:</strong> R$ 83,33</p>
+            <p><strong>Parcelas em Aberto:</strong> R$ 166,67</p>
+        </div>
+
+        <!-- TABELA DE PARCELAS -->
+        <h3>Parcelas</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Pedido</th>
+                    <th>Parcela</th>
+                    <th>Vencimento</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>#101</td>
+                    <td>1 / 3</td>
+                    <td>10/02/2026</td>
+                    <td>R$ 83,33</td>
+                    <td>
+                        <span class="status pago">Paga</span>
+                    </td>
+                    <td>—</td>
+                </tr>
+
+                <tr>
+                    <td>#101</td>
+                    <td>2 / 3</td>
+                    <td>10/03/2026</td>
+                    <td>R$ 83,33</td>
+                    <td>
+                        <span class="status aguardando">Em Aberto</span>
+                    </td>
+                    <td>
+                        <button class="btn primary" onclick="pagarParcela(this)">
+                            Dar Baixa
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>#101</td>
+                    <td>3 / 3</td>
+                    <td>10/04/2026</td>
+                    <td>R$ 83,33</td>
+                    <td>
+                        <span class="status aguardando">Em Aberto</span>
+                    </td>
+                    <td>
+                        <button class="btn primary" onclick="pagarParcela(this)">
+                            Dar Baixa
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="pedidos.html" class="btn">
+            ⬅ Voltar para Pedidos
+        </a>
+
+    </main>
+</div>
+
+<script>
+    function pagarParcela(botao) {
+        if (!confirm("Confirmar pagamento desta parcela?")) {
+            return;
+        }
+
+        const linha = botao.closest("tr");
+        const status = linha.querySelector(".status");
+
+        status.textContent = "Paga";
+        status.className = "status pago";
+
+        botao.remove();
+
+        alert("Parcela paga com sucesso!");
+    }
+</script>
+
+</body>
+</html>
